@@ -3,3 +3,26 @@ channel = "stable-25_05"
 
 [agent]
 expertMode = true
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Run eligibility check"
+
+[[workflows.workflow]]
+name = "Run eligibility check"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "g++ -std=c++17 -o /tmp/lab5-eligibility main.cpp && /tmp/lab5-eligibility"
+
+[workflows.workflow.metadata]
+outputType = "console"
