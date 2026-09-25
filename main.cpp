@@ -7,6 +7,8 @@ int main() {
   int age = 0;
   double gpa = 0.0;
 
+  int test = 0;
+  std::cout << "test";
   // TODO: cout question, then cin, for age and for gpa
 
   // Thresholds: adult at 18, honors at 3.5 (change these and say why in a comment)
