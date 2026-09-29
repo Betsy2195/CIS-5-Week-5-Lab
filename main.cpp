@@ -1,25 +1,35 @@
 #include <iostream>
 
-// Lab 5 — Your Name
+// Lab 5 — Betsy Caudel
 // CIS 5 Week 05 · Eligibility check
+using std::cout;
+using std::cin;
+using std::endl;
 
 int main() {
   int age = 0;
   double gpa = 0.0;
 
-  int test = 0;
-  std::cout << "test";
-  // TODO: cout question, then cin, for age and for gpa
+  // Asks for age and GPA.
+  // Stores age and GPA.
+  cout << "What is your age?" << endl;
+  cin >> age;
+  cout << "What is your GPA?" << endl; 
+  cin >> gpa; 
 
-  // Thresholds: adult at 18, honors at 3.5 (change these and say why in a comment)
-  // TODO: bool adult = ...;
-  // TODO: bool honors = ...;
+  // Sets limits for bools.
+  bool adult = age >= 18;
+  bool honors = gpa >= 3.5;
 
-  // TODO: if (adult && honors) { ... }        best case first
-  // TODO: else if (adult || honors) { ... }   exactly one requirement met
-  // TODO: else { ... }                        neither — the program still answers
-
-  // Edge values to run: 17 / 18 with a 3.8, and 3.4 / 3.5 with age 20
+  // Thresholds: sdults are 18 and up.
+  // honors is at 3.5 GPA and up.
+  if (adult && honors) {
+    cout << "You are eligible for the honors program";
+  } else if (adult || honors) {
+    cout << "You're half way there! One requirement met.";
+  } else {
+    cout << "You are not eligible yet.";
+  }
 
   return 0;
 }
